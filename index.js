@@ -72,7 +72,7 @@ app.get('/', async function (req, res) {
 
 });
 
-app.set('port', (8080));
+app.set('port', (8081));
 app.listen(app.get('port'),() => {
     console.log("smartfridge");
 });
