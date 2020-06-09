@@ -72,7 +72,7 @@ app.get('/', async function (req, res) {
 
 });
 
-app.set('port', (8081));
-app.listen(app.get('port'),() => {
+const port = process.env.port || 8080;
+app.listen(port,() => {
     console.log("smartfridge");
 });
