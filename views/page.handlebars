@@ -1,0 +1,96 @@
+
+{{!-- <div class="container" > --}}
+<div class="row">
+  <div class="col-sm-4 col">
+    <div class="card border-primary">
+        <div class="card-body">
+        <h5 class="card-title">Fridge status</h5>
+        <div class="table-responsive">
+        <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Object</th>
+            <th scope="col">Owner</th>
+            <th scope="col">How long</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each in}}
+            <tr>
+            <td>{{Type}}</td>
+            {{#stranger PersonId}}
+                <td>Stranger</td>
+            {{else}}
+                <td>{{PersonId}}</td>
+            {{/stranger}}
+            <td>{{howLong DateIn}} Hrs</td>
+            </tr>
+        {{else}}
+            <p>無放入東西</p>
+        {{/each}}
+        </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-8 col">
+    <div class="card border-info">
+        <div class="card-body">
+        <h5 class="card-title">Taken Out Object</h5>
+        <div class="table-responsive">
+            <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Object</th>
+                <th scope="col">Owner</th>
+                <th scope="col">How long</th>
+                <th scope="col">Date Out</th>
+                <th scope="col">Who took it</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+            {{#each out}}
+                <tr>
+                <td>{{Type}}</td>
+                {{#stranger PersonId}}
+                    <td class="text-danger" value={{PersonId}}>stranger</td>
+                {{else}}
+                    <td>{{PersonId}}</td>
+                {{/stranger}}
+                <td>{{howLongTook DateIn DateOut}}</td>
+                <td>{{DateOut}}</td>
+                {{{ifcheck PersonId PersonOut}}}
+                </tr>
+            {{else}}
+                <p>無放入東西</p>
+            {{/each}}
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+{{!-- </div> --}}
+
+<div style="padding:128px 16px">
+    <h3 >Strangers</h5>
+    <div class="row">
+    {{#each people}}
+    <div class="col-sm-6 col-12">
+    <div class="card card-body text-center">
+        <div >
+            <p>{{Date}}</p>
+            <video controls="controls">
+                <source src={{Url}}>
+            </video>
+        </div>
+    </div>
+    </div>
+    {{else}}
+        <p>無陌生人</p>
+    {{/each}}
+    
+</div>
