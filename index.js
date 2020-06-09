@@ -72,13 +72,7 @@ app.get('/', async function (req, res) {
 
 });
 
-<<<<<<< HEAD
 const port = process.env.port || 8080;
 app.listen(port,() => {
     console.log("smartfridge");
-=======
-const port = process.env.port || 3000;
-app.listen(port,() => {
-    console.log("handlebars");
->>>>>>> e23555adbc2358eacf1ef10c192b869d0d097f76
 });
