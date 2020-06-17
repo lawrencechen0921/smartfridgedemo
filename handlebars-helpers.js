@@ -1,5 +1,6 @@
 const moment = require("moment");
-
+const tz = require('moment-timezone');
+let timezone = "Asia/Taipei";
 module.exports = {
     ifeq: function(a, b, options){
       if (a === b) {
@@ -8,9 +9,13 @@ module.exports = {
       return options.inverse(this);
     },
     howLong: function(date){
-      var now =  moment()
+      var now =  moment().tz(timezone)
       var dif = now.diff(date, 'hours')
-      return dif
+      if (dif == "0"){
+        dif = now.diff(date, 'minutes')
+        return dif+" Mins"
+    }
+      return dif+' Hrs'
     },    
     howLongTook: function(datein, dateout){
       var now =  moment(dateout)
