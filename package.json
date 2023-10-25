@@ -14,7 +14,7 @@
     "express": "^4.17.3",
     "express-handlebars": "^5.3.1",
     "moment": "^2.29.2",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.35",
     "sort-json-array": "^0.1.7"
   }
 }
